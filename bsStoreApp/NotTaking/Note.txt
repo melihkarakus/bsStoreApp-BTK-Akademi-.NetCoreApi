@@ -1,0 +1,14 @@
+﻿1.Models Klasörü oluşturuldu. İçine Books sınıfı tanımlandı ve sütunları geçildi.
+2.Repositories Klasörü oluşturuldu. İçine DBContext tanımlanması için paket olarak entityframework paketi yüklendi. 
+3.appsettings.json database kurulumu için bir konfigrasyon geçildi. 
+4.Program.cs bunu çalıştırmak için oraya bir konfigrasyon geçildi.
+5.Migration uygulamak için yani database tabloyu eklemek için tools ve desing paketleri oluşturuldu.
+6.Repositories klasörünün altına bir Config klasörü eklendi. Eklenen klasörde IEntityTypeConfigration<Book> parametresi ile tanımlandı. Ctrl+. yaptığımızda
+implemente ettik ve ardından konfigrasyon geçtik. BookConfig Migration uygularken hata alındı hatada ise BookConfig görünmez geçersiz kılınması isteniyordu 
+bu yüzden override metodu kullandık.
+7.BooksController oluşturuldu. BooksController içine HTTP(Get,Post,Put,Delete) metodları tanımlandı.
+8.Solution üzerine bir class projesi ekledik ve buna models klasörü oluşturduk onun içine sınıflarımı tutucaz.
+9.Repositories class oluşturuldu. Contracts klasörü oluşturuldu ve buna IrepositoryBase sınıfı oluşturulup crud işlemleri gerçekleştirild.
+10.RepoContext ve BookConfig Klasörleri ile database bağlantıları burada kalır.
+11.RepositoryBase sınıfı oluşturuldu. Crud işlemleri yapıldı.
+12.IBookRepository Oluşturuldu. Bookrepository implemente alındı ve Crud işlemleri geçildi.
