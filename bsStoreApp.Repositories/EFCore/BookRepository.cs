@@ -23,8 +23,9 @@ namespace bsStoreApp.Repositories.EFCore
             FindAll(trackChanges)
             .OrderBy(b => b.ID);
 
-        public IQueryable<Book> GetOneBookById(int id, bool trackChanges) =>
-            FindByCondition(b => b.ID.Equals(id), trackChanges);
+        public Book GetOneBookById(int id, bool trackChanges) =>
+            FindByCondition(b => b.ID.Equals(id), trackChanges)
+            .FirstOrDefault();
 
         public void UpdateOneBook(Book book) => Update(book);
     }

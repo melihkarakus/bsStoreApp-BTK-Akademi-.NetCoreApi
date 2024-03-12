@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\bsStoreApp.Entity\bsStoreApp.Entity.csproj" />
+    <ProjectReference Include="..\bsStoreApp.Repositories\bsStoreApp.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -22,7 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\bsStoreApp.Entity\bsStoreApp.Entity.csproj" />
+    <ProjectReference Include="..\bsStoreApp.Presentation\bsStoreApp.Presentation.csproj" />
     <ProjectReference Include="..\bsStoreApp.Repositories\bsStoreApp.Repositories.csproj" />
+    <ProjectReference Include="..\bsStoreApp.Services\bsStoreApp.Services.csproj" />
   </ItemGroup>
 
 </Project>

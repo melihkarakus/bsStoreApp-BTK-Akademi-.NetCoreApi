@@ -12,3 +12,19 @@ bu yüzden override metodu kullandık.
 10.RepoContext ve BookConfig Klasörleri ile database bağlantıları burada kalır.
 11.RepositoryBase sınıfı oluşturuldu. Crud işlemleri yapıldı.
 12.IBookRepository Oluşturuldu. Bookrepository implemente alındı ve Crud işlemleri geçildi.
+13.IrepositoryManager diye bir interface oluşturuldu. Ardından metodlar tanımlandı. RepositoryManager adında bir class oluşturuldu İnterface tanımlananlar 
+oraya implemente edildi ve gerekli kaydetme işlemi için kodlar geçildi.(Amaç tekrar tekrar kodları yazmamak kısaltmak.)
+14.Program.cs fazladan tanımlamak yerine Extensions klasörü oluşturup gerekli kod geçilip. Gerekli sql program.cs bağlantısı geçildi.
+15.ApiController BookController IRepositoryManager çağrıldı çünkü Bütün interface ve classlardan kalıtım aldı. BookController düzeltildi.
+16.BookController da çalıştırdığımızda RepositoryManager ve IRepositoryManager birbirlerini tanımlamadığı için Extensions klasörünün içinde bu metod geçildi.
+Ardından bunu metodu program.cs de çağırdık.
+17.bsStoreApp.Service Class Library oluşturuldu. ve bir IBookService ve BookManager class ve interface oluşturuldu. ve Parametreler geçildi sınıflara bak. 
+crud işlemi ise BookManager sınıfında yapıldı.
+18.IServiceManager interface sınıfında bir metod tanımlandı. ServiceManager class ise implement edildikten sonra gerekli kod yapısı yazıldı.
+19.Api üzerinde extensions klasörüne gerekli kodlama yapısı geçildi birbirine tanıtmak için.
+20.Presentation katmanı oluşturuldu. ApiController içindeki controller presentation katmanında yer alacaktır. Controller tanımlaması yapılması için
+api katmanında program.cs gelip şu configrasyonu geçmelisin.
+("builder.Services.AddControllers().AddApplicationPart(typeof(bsStoreApp.Presentation.AssemblyReference).Assembly);")
+assemblyreference sınıfıda presentation içinde tanımlıdır.
+21.Api tarafına ContextFactory diye bir klasör oluşturuldu. RepositoryContext sınıfı oluşturulup kodlar içinde detaylı bak kalıtımlar alındı. Bir yol verildi
+yola göre migration uygulandı.
