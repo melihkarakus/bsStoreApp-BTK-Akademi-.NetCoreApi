@@ -28,3 +28,11 @@ api katmanında program.cs gelip şu configrasyonu geçmelisin.
 assemblyreference sınıfıda presentation içinde tanımlıdır.
 21.Api tarafına ContextFactory diye bir klasör oluşturuldu. RepositoryContext sınıfı oluşturulup kodlar içinde detaylı bak kalıtımlar alındı. Bir yol verildi
 yola göre migration uygulandı.
+
+NLOG
+21.Service Katmanın içinde bulunan Contract Klasörünün içine ILoggerService Tanımlandı ve paket yüklendi.
+22.Service katmanına loggermanager içine Iloggerservice de tanımlanan metodlar implemente ettik ve kodlamalarını yaptık.
+23.ServiceExtensions klasörüne gelip bir konfigrasyon geçildi. nlog.config diye bir dosya oluşturuldu ve içine parametreler geçildi. Program.cs geldik nlogconfig
+tanımlattırmak için bu kod geldi.LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config")); bu kod geçtik.
+24.IBookService sınıfında logger işlemi generate constracter geçtik. Loggerservice hata alma esnasında loglama işlemi yaptırdık ve projemize internal_logs
+klasörü eklenmiş oldu.

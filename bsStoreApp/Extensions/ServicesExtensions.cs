@@ -24,5 +24,10 @@ namespace bsStoreApp.Extensions
         {
             Services.AddScoped<IServiceManager, ServiceManager>();
         }
+
+        public static void ConfigureLoggerService(this IServiceCollection ServicesLog) 
+        {
+            ServicesLog.AddSingleton<ILoggerService, LoggerManager>();
+        }
     }
 }

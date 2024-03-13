@@ -12,10 +12,11 @@ namespace bsStoreApp.Services
     public class BookManager : IBookService
     {
         private readonly IRepositoryManager _repositoryManager;
-
-        public BookManager(IRepositoryManager repositoryManager)
+        private readonly ILoggerService _loggerService;
+        public BookManager(IRepositoryManager repositoryManager, ILoggerService loggerService)
         {
             _repositoryManager = repositoryManager;
+            _loggerService = loggerService;
         }
 
         public Book CreateOneBook(Book book)
@@ -30,7 +31,9 @@ namespace bsStoreApp.Services
             var entity = _repositoryManager.Book.GetOneBookById(id, trackChanges);
             if (entity is null)
             {
-                throw new Exception($"Book read id:{id} could not found");
+                string message = $"The book with id:{id} could not found";
+                _loggerService.LogInfo(message);
+                throw new Exception(message);
             }
             else
             {
@@ -52,9 +55,11 @@ namespace bsStoreApp.Services
         public void UpdateOneBook(int id, Book book, bool trackChanges)
         {
             var entity = _repositoryManager.Book.GetOneBookById(id, trackChanges);
-            if (entity != null)
+            if (entity is null)
             {
-                throw new Exception($"Book read id:{id} could not found");
+                string message = $"Book read id:{id} could not found";
+                _loggerService.LogInfo(message);
+                throw new Exception(message);
             }
             else
             {

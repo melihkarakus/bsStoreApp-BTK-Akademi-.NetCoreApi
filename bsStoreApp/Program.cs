@@ -1,8 +1,11 @@
 using bsStoreApp.Extensions;
 using bsStoreApp.Repositories.EFCore;
 using Microsoft.EntityFrameworkCore;
+using NLog;
 
 var builder = WebApplication.CreateBuilder(args);
+//NLog nlog.config tanýmlattýrdýk.
+LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
 
 // Add services to the container.
 //assembly reference vermezsek presentation controller çalýþmaz.
@@ -17,7 +20,7 @@ builder.Services.ConfigureSqlContext(builder.Configuration);
 //Repository birbirlerine anlatmak için yazýlan kod Extensions klasörüne bak.
 builder.Services.ConfigureRepositoryManager();
 builder.Services.ConfigureServiceManager();
-
+builder.Services.ConfigureLoggerService();
 
 
 
