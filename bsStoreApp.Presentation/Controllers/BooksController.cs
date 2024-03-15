@@ -1,4 +1,5 @@
-﻿using bsStoreApp.Entity.Models;
+﻿using bsStoreApp.Entity.Exceptions;
+using bsStoreApp.Entity.Models;
 using bsStoreApp.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -30,9 +31,9 @@ namespace bsStoreApp.Presentation.Controllers
         public IActionResult GetOneBook(int id)
         {
             var Getonebooks = _services.BookService.GetOneBook(id, false);
-            if (Getonebooks == null)
+            if (Getonebooks is null)
             {
-                return NotFound("Girilen ID Geçersiz!!");
+                throw new BookNotFound(id);
             }
             else
             {

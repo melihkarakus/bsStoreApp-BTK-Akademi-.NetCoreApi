@@ -1,4 +1,5 @@
-﻿using bsStoreApp.Entity.Models;
+﻿using bsStoreApp.Entity.Exceptions;
+using bsStoreApp.Entity.Models;
 using bsStoreApp.Repositories.Contracts;
 using bsStoreApp.Services.Contract;
 using System;
@@ -31,9 +32,7 @@ namespace bsStoreApp.Services
             var entity = _repositoryManager.Book.GetOneBookById(id, trackChanges);
             if (entity is null)
             {
-                string message = $"The book with id:{id} could not found";
-                _loggerService.LogInfo(message);
-                throw new Exception(message);
+                throw new BookNotFound(id);
             }
             else
             {
@@ -57,9 +56,7 @@ namespace bsStoreApp.Services
             var entity = _repositoryManager.Book.GetOneBookById(id, trackChanges);
             if (entity is null)
             {
-                string message = $"Book read id:{id} could not found";
-                _loggerService.LogInfo(message);
-                throw new Exception(message);
+                throw new BookNotFound(id);
             }
             else
             {

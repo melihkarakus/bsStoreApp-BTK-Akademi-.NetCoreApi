@@ -36,3 +36,31 @@ NLOG
 tanımlattırmak için bu kod geldi.LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config")); bu kod geçtik.
 24.IBookService sınıfında logger işlemi generate constracter geçtik. Loggerservice hata alma esnasında loglama işlemi yaptırdık ve projemize internal_logs
 klasörü eklenmiş oldu.
+
+Global Hata Ayıklama
+25.ErrorDetails sınıfı oluşturduk.
+26.ExceptionsMiddlewareExtensions sınıfı oluşturduk api üzerindeki Extensions klasörünün içine ve bu class içine handler configure işlemi geçtik. Açıklaması
+şöyle verilen hatayı daha detaylı anlamamız ve temiz şekilde okumamız için.
+27.program.cs tanımladığımız ExceptionsMiddlewareExtensions sınıfını tanımlattırmamız gerekiyor ve kod şu şekilde olacak("var logger = app.Services.GetRequiredService<ILoggerService>();
+app.ConfigureExceptionHandler(logger);")
+28.NotFound ve BookNotFound yani hatayı ekrana yansıtmak için tanımlanan kodları burada geçtik. Entity sınıfında bulabilirsin Exceptions klasöründe.
+29.statuscode belirle hatanın ne ile döndüğünü örneğini karşımıza çıkartmak için. BookNotFound ve NotFonudExceptions sınıfları oluşturuldu.
+30.tanımlanan hata kodlarını döndürüp ekrana yansıtmak için throw new BookNotFound(id); bu şekilde yapabilirsin. BooksController da bak GetOneBook yaptık.
+BooksManager bakabilirsin Service Katmanında orada delete update ve getonebook işlemleri yapıyor.
+
+AutoMapper
+31.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

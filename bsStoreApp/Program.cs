@@ -1,5 +1,6 @@
 using bsStoreApp.Extensions;
 using bsStoreApp.Repositories.EFCore;
+using bsStoreApp.Services.Contract;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -26,11 +27,21 @@ builder.Services.ConfigureLoggerService();
 
 var app = builder.Build();
 
+//ExceptionsMiddlewareExtensions sýnýfýna tanýmlanan configure burada bu þekilde geçmelisin çünkü mimari oluþtuktan sonra bu kod çalýþacaktýr.
+var logger = app.Services.GetRequiredService<ILoggerService>();
+app.ConfigureExceptionHandler(logger);
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+//Productions için gerekli kod eklendi.
+if (app.Environment.IsProduction())
+{
+    app.UseHsts();
 }
 
 app.UseHttpsRedirection();
