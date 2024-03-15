@@ -1,4 +1,6 @@
-﻿using bsStoreApp.Entity.Exceptions;
+﻿using AutoMapper;
+using bsStoreApp.Entity.DataTransferObjects;
+using bsStoreApp.Entity.Exceptions;
 using bsStoreApp.Entity.Models;
 using bsStoreApp.Repositories.Contracts;
 using bsStoreApp.Services.Contract;
@@ -14,10 +16,12 @@ namespace bsStoreApp.Services
     {
         private readonly IRepositoryManager _repositoryManager;
         private readonly ILoggerService _loggerService;
-        public BookManager(IRepositoryManager repositoryManager, ILoggerService loggerService)
+        private readonly IMapper _mapper;
+        public BookManager(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper)
         {
             _repositoryManager = repositoryManager;
             _loggerService = loggerService;
+            _mapper = mapper;
         }
 
         public Book CreateOneBook(Book book)
@@ -51,7 +55,7 @@ namespace bsStoreApp.Services
             return _repositoryManager.Book.GetOneBookById(id, trackChanges);
         }
 
-        public void UpdateOneBook(int id, Book book, bool trackChanges)
+        public void UpdateOneBook(int id, BookDtoUpdate bookDtoUpdate, bool trackChanges)
         {
             var entity = _repositoryManager.Book.GetOneBookById(id, trackChanges);
             if (entity is null)
@@ -60,6 +64,7 @@ namespace bsStoreApp.Services
             }
             else
             {
+                entity = _mapper.Map<Book>(bookDtoUpdate);
                 _repositoryManager.Book.UpdateOneBook(entity);
                 _repositoryManager.Save();
             }

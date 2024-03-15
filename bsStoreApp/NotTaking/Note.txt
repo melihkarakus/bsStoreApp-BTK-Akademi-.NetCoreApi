@@ -49,7 +49,16 @@ app.ConfigureExceptionHandler(logger);")
 BooksManager bakabilirsin Service Katmanında orada delete update ve getonebook işlemleri yapıyor.
 
 AutoMapper
-31.
+31.Automapper kütüphanesi kuruldu. Program.cs de çağırıldı.
+32.Entity Katmanına BookDto Oluşturuldu.
+33.Api katmanında Utilities klasörünün altında automapper klasörü oluşturulup MappingProfile class oluşturuldu. Oluşturulan class içine ctor tanımlandı ve 
+gerekli map işlemi yapıldı.
+34.mapplemek istediğimiz bookmanager geldik ve bookmanager bir constroucter geçildi ve geçilen constracter update yaparken bir mapleme işlemi yapılacak
+ardından bağlı olan ServiceManager bizden bookdto isticek ve değiştirilmesi gereken update bookdto eklenecek oraya eklendiğin içinde Presentation Katmanındaki
+bookcontroller da bir kalıntı aldığı için orayada bookun kendisi değil mapping yaptığımız bookdto çağırmamız gerekiyor
+
+İçerik Pazarlığı
+35.
 
 
 

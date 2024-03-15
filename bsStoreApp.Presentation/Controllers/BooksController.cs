@@ -1,4 +1,5 @@
-﻿using bsStoreApp.Entity.Exceptions;
+﻿using bsStoreApp.Entity.DataTransferObjects;
+using bsStoreApp.Entity.Exceptions;
 using bsStoreApp.Entity.Models;
 using bsStoreApp.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
@@ -53,16 +54,16 @@ namespace bsStoreApp.Presentation.Controllers
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateBook(int id, Book book)
+        public IActionResult UpdateBook(int id, BookDtoUpdate bookDtoUpdate)
         {
-            if (book == null)
+            if (bookDtoUpdate == null)
             {
                 return NotFound();
             }
             else
             {
-                _services.BookService.UpdateOneBook(id, book, true);
-                return Ok(book);
+                _services.BookService.UpdateOneBook(id, bookDtoUpdate, true);
+                return Ok(bookDtoUpdate);
             }
         }
     }
