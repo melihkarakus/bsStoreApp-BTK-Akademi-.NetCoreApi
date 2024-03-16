@@ -58,7 +58,23 @@ ardından bağlı olan ServiceManager bizden bookdto isticek ve değiştirilmesi
 bookcontroller da bir kalıntı aldığı için orayada bookun kendisi değil mapping yaptığımız bookdto çağırmamız gerekiyor
 
 İçerik Pazarlığı
-35.
+35.İçerik pazarlığı için apiye istek atılıyor herhangi bir istemci tarafından eğer biz onu destekliyorsak yanıt veriyoruz. Bu bölümde program.cs bir konfigrasyon
+yazıldı. config.RespectBrowserAcceptHeader = true; bunu yazıp altınada config.ReturnHttpNotAcceptable = true; bunu yaz.
+36.xml formatında dönebilmesi için isteğin AddXmlDataContractSerializerFormatters() bunu eklememiz gerekiyor
+37.IBookService BookDto eklendi. Fakat BookDto sınıfı olmadığında entity katmanına gelindi ve DTO klasöründe bir BookDto sınıfı oluşturuldu.
+BookManager gelindi GetAllBooks da BookDto çağırıldı ve MappingProfile kısmında BookDto mapleme işlemi yapıldı.
+
+Doğrulama(Validation)
+38.Entity katmanının altında DTO klasöründe BookDtoForManipulation klasörü oluşturuldu ve validasyon yazıldı.
+39.IBookservice Dto çevirdik. ve BookManager çevirilen serviceleri impelemente edecek şekilde yazdık ve gerekli mapleme işlemi OneBook ve CrateBook için 
+tanımlama yapıldı.
+40.BookController da Contract klasöründe değişiklik yapıldığı için Controllerda Ekleme yapma işleminde değişiklik yapmamız gerekmektedir.
+41.PostValidasyonunu yapmak istediğimizde program.cs hatayı gösterebilmek için konfigrasyon yaptık.builder.Services.Configure<ApiBehaviorOptions>(opt =>
+{
+    opt.SuppressModelStateInvalidFilter = true;
+});
+konfigrasyon budur.
+
 
 
 

@@ -24,11 +24,12 @@ namespace bsStoreApp.Services
             _mapper = mapper;
         }
 
-        public Book CreateOneBook(Book book)
+        public BookDto CreateOneBook(BookDtoForInsertion bookDtoForInsertion)
         {
-            _repositoryManager.Book.CreateOneBook(book);
+            var values = _mapper.Map<Book>(bookDtoForInsertion);
+            _repositoryManager.Book.CreateOneBook(values);
             _repositoryManager.Save();
-            return book;
+            return _mapper.Map<BookDto>(values);
         }
 
         public void DeleteOneBook(int id, bool trackChanges)
@@ -45,14 +46,16 @@ namespace bsStoreApp.Services
             }
         }
 
-        public IEnumerable<Book> GetAllBooks(bool trackChanges)
+        public IEnumerable<BookDto> GetAllBooks(bool trackChanges)
         {
-            return _repositoryManager.Book.GetAllBook(trackChanges);
+            var books = _repositoryManager.Book.GetAllBook(trackChanges);
+            return _mapper.Map<IEnumerable<BookDto>>(books);
         }
 
-        public Book GetOneBook(int id, bool trackChanges)
+        public BookDto GetOneBook(int id, bool trackChanges)
         {
-            return _repositoryManager.Book.GetOneBookById(id, trackChanges);
+            var values = _repositoryManager.Book.GetOneBookById(id, trackChanges);
+            return _mapper.Map<BookDto>(values);
         }
 
         public void UpdateOneBook(int id, BookDtoUpdate bookDtoUpdate, bool trackChanges)

@@ -14,3 +14,71 @@
 2024-03-15 19:09:52.8780 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
 2024-03-15 19:09:52.8913 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
 2024-03-15 19:09:52.9026 Info Configuration initialized.
+2024-03-16 12:42:12.9974 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 12:42:13.1097 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 12:42:13.1359 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 12:42:13.1547 Info Configuration initialized.
+2024-03-16 12:49:49.9840 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 12:49:50.0215 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 12:49:50.0373 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 12:49:50.0534 Info Configuration initialized.
+2024-03-16 12:52:26.4339 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 12:52:26.4621 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 12:52:26.4785 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 12:52:26.4973 Info Configuration initialized.
+2024-03-16 12:58:26.0611 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 12:58:26.0954 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 12:58:26.1113 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 12:58:26.1248 Info Configuration initialized.
+2024-03-16 13:19:01.8277 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 13:19:01.8637 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 13:19:01.8909 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 13:19:01.9234 Info Configuration initialized.
+2024-03-16 13:20:45.6911 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 13:20:45.7181 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 13:20:45.7325 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 13:20:45.7452 Info Configuration initialized.
+2024-03-16 14:32:45.8274 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:32:45.8516 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:32:45.8516 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:32:45.8752 Info Configuration initialized.
+2024-03-16 14:40:56.0413 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:40:56.0655 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:40:56.0797 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:40:56.0927 Info Configuration initialized.
+2024-03-16 14:45:27.9565 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:45:27.9799 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:45:27.9971 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:45:28.0111 Info Configuration initialized.
+2024-03-16 14:50:18.7309 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:50:18.7533 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:50:18.7660 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:50:18.7769 Info Configuration initialized.
+2024-03-16 14:53:14.1050 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:53:14.1353 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:53:14.1353 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:53:14.1641 Info Configuration initialized.
+2024-03-16 14:56:00.8539 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:56:00.8539 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:56:00.8766 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:56:00.8880 Info Configuration initialized.
+2024-03-16 14:57:34.7998 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:57:34.8256 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:57:34.8415 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:57:34.8542 Info Configuration initialized.
+2024-03-16 14:58:15.3892 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:58:15.4131 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:58:15.4280 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:58:15.4419 Info Configuration initialized.
+2024-03-16 14:59:09.5910 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 14:59:09.6206 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 14:59:09.6353 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 14:59:09.6353 Info Configuration initialized.
+2024-03-16 15:00:39.7491 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 15:00:39.7769 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 15:00:39.7929 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 15:00:39.8064 Info Configuration initialized.
+2024-03-16 15:03:17.1999 Info Registered target NLog.Targets.FileTarget(Name=logfile)
+2024-03-16 15:03:17.2251 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.2.8.2366. Product version: 5.2.8+f586f1341c46fa38aaaff4c641e7f0fa7e813943. GlobalAssemblyCache: False
+2024-03-16 15:03:17.2414 Info Validating config: TargetNames=logfile, ConfigItems=12, FilePath=C:\Users\LENOVO\Desktop\BTKAkademiBsStore\bsStoreApp\bsStoreApp\nlog.config
+2024-03-16 15:03:17.2414 Info Configuration initialized.

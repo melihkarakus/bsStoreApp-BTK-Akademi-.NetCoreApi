@@ -10,9 +10,9 @@ namespace bsStoreApp.Services.Contract
 {
     public interface IBookService 
     {
-        IEnumerable<Book> GetAllBooks(bool trackChanges);
-        Book GetOneBook(int id, bool trackChanges);
-        Book CreateOneBook(Book book);
+        IEnumerable<BookDto> GetAllBooks(bool trackChanges);
+        BookDto GetOneBook(int id, bool trackChanges);
+        BookDto CreateOneBook(BookDtoForInsertion bookDtoForInsertion);
         void UpdateOneBook(int id, BookDtoUpdate bookDtoUpdate, bool trackChanges);
         void DeleteOneBook(int id, bool trackChanges);
     }

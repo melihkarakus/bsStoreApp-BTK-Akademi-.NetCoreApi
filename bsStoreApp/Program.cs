@@ -1,6 +1,7 @@
 using bsStoreApp.Extensions;
 using bsStoreApp.Repositories.EFCore;
 using bsStoreApp.Services.Contract;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NLog;
 
@@ -10,7 +11,21 @@ LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nl
 
 // Add services to the container.
 //assembly reference vermezsek presentation controller çalýþmaz.
-builder.Services.AddControllers().AddApplicationPart(typeof(bsStoreApp.Presentation.AssemblyReference).Assembly);
+builder.Services.AddControllers(config =>
+{
+    //Ýçerik Pazarlýðý Konfigrasyon
+    config.RespectBrowserAcceptHeader = true; //Ýçerik pazarlýðýný yapmamýz için gereken konfigrasyon
+    config.ReturnHttpNotAcceptable = true; //Api gönderilen isteðin bu içerikle pazarlama yapýlmadýðýný belirtir.
+})
+    .AddXmlDataContractSerializerFormatters() //XML Formatýnda dönmesi için
+    .AddApplicationPart(typeof(bsStoreApp.Presentation.AssemblyReference).Assembly);
+
+// Hata davranýþýný devre dýþý býrakmak için
+builder.Services.Configure<ApiBehaviorOptions>(opt =>
+{
+    opt.SuppressModelStateInvalidFilter = true;
+});
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

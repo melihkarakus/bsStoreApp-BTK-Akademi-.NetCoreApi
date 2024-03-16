@@ -8,7 +8,9 @@ namespace bsStoreApp.Utilities.AutoMapper
     {
         public MappingProfile()
         {
-            CreateMap<BookDtoUpdate, Book>();
+            CreateMap<BookDtoUpdate, Book>().ReverseMap();
+            CreateMap<Book, BookDto>();
+            CreateMap<BookDtoForInsertion, Book>();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using bsStoreApp.Entity.DataTransferObjects;
+﻿    using bsStoreApp.Entity.DataTransferObjects;
 using bsStoreApp.Entity.Exceptions;
 using bsStoreApp.Entity.Models;
 using bsStoreApp.Services.Contract;
@@ -42,10 +42,18 @@ namespace bsStoreApp.Presentation.Controllers
             }
         }
         [HttpPost]
-        public IActionResult AddBook(Book book)
+        public IActionResult AddBook(BookDtoForInsertion bookDtoForInsertion)
         {
-            _services.BookService.CreateOneBook(book);
-            return Ok("Kitap Eklendi.");
+            //Hatayı gösterebilmek için modelstate isvalid yapılmalı.
+            if (!ModelState.IsValid)
+            {
+                return UnprocessableEntity(ModelState);
+            }
+            else
+            {
+                _services.BookService.CreateOneBook(bookDtoForInsertion);
+                return Ok("Kitap Eklendi.");
+            }
         }
         [HttpDelete("DeleteBook")]
         public IActionResult DeleteBook(int id)
@@ -62,7 +70,7 @@ namespace bsStoreApp.Presentation.Controllers
             }
             else
             {
-                _services.BookService.UpdateOneBook(id, bookDtoUpdate, true);
+                _services.BookService.UpdateOneBook(id, bookDtoUpdate, false);
                 return Ok(bookDtoUpdate);
             }
         }
