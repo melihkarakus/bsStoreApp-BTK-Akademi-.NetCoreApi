@@ -1,16 +1,19 @@
-﻿    using bsStoreApp.Entity.DataTransferObjects;
+﻿using bsStoreApp.Entity.DataTransferObjects;
 using bsStoreApp.Entity.Exceptions;
 using bsStoreApp.Entity.Models;
+using bsStoreApp.Presentation.ActionFilters;
 using bsStoreApp.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace bsStoreApp.Presentation.Controllers
 {
+    [ServiceFilter(typeof(LogFilterAttribute))]
     [ApiController]
     [Route("api/Books")]
     public class BooksController : ControllerBase
@@ -41,19 +44,14 @@ namespace bsStoreApp.Presentation.Controllers
                 return Ok(Getonebooks);
             }
         }
+
+
+        [ServiceFilter(typeof(ValidationFilterAttribute))]//Hatayı gösterebilmek için modelstate isvalid yapılmalı.
         [HttpPost]
         public async Task<IActionResult> AddBookAsync(BookDtoForInsertion bookDtoForInsertion)
         {
-            //Hatayı gösterebilmek için modelstate isvalid yapılmalı.
-            if (!ModelState.IsValid)
-            {
-                return UnprocessableEntity(ModelState);
-            }
-            else
-            {
-                await _services.BookService.CreateOneBookAsync(bookDtoForInsertion);
-                return Ok("Kitap Eklendi.");
-            }
+            await _services.BookService.CreateOneBookAsync(bookDtoForInsertion);
+            return Ok("Kitap Eklendi.");
         }
         [HttpDelete("DeleteBook")]
         public async Task<IActionResult> DeleteBookAsync(int id)
@@ -61,19 +59,12 @@ namespace bsStoreApp.Presentation.Controllers
             await _services.BookService.DeleteOneBookAsync(id, false);
             return Ok();
         }
+        [ServiceFilter(typeof(ValidationFilterAttribute))]
         [HttpPut]
         public async Task<IActionResult> UpdateBookAsync(int id, BookDtoUpdate bookDtoUpdate)
-        {
-            
-            if (!ModelState.IsValid)
-            {
-                return UnprocessableEntity(ModelState);
-            }
-            else
-            {
+        {         
                 await _services.BookService.UpdateOneBookAsync(id, bookDtoUpdate, false);
                 return Ok(bookDtoUpdate);
-            }
         }
     }
 }

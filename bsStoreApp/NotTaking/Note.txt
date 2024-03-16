@@ -79,6 +79,11 @@ Asenkron Kod
 42.IBookRepository Async metodlarını çevirdik. Gerekli impelemente alınan yerleride async metodlarına çevirmiş olduk.
 43.IBookService async şeklinde crud işlemleri düzenlendi oraı düzenlendiği içinde BookManager impelemente edilen metodlarda async olarak düzeltildi.
 
+ActionFilter
+44.Presentation katmanına ActionFilters klasör eklendi. Eklenen klasörün içine ValidationFilterAttribute eklendi ve kodlama yapıldı.
+45.Program.cs Actionfilters controllerda attribute tanımlayabilmemiz için gerekli başlangıç konfigrasyonu eklendi ve BookControllerda çağırıldı.
+46.LogDetails sınıfı oluşturuldu. LogfilterAttribute sınıfı oluşturuldu. ve Program.cs de tanımlanması için ServiceExtentions bir konfigrasyon geçildi.
+
 
 
 

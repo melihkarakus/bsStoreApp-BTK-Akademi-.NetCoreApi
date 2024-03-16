@@ -1,4 +1,5 @@
 using bsStoreApp.Extensions;
+using bsStoreApp.Presentation.ActionFilters;
 using bsStoreApp.Repositories.EFCore;
 using bsStoreApp.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
@@ -19,6 +20,8 @@ builder.Services.AddControllers(config =>
 })
     .AddXmlDataContractSerializerFormatters() //XML Formatýnda dönmesi için
     .AddApplicationPart(typeof(bsStoreApp.Presentation.AssemblyReference).Assembly);
+
+
 
 // Hata davranýþýný devre dýþý býrakmak için
 builder.Services.Configure<ApiBehaviorOptions>(opt =>
@@ -41,7 +44,8 @@ builder.Services.ConfigureLoggerService();
 //Automapper Konfigrasyonu
 builder.Services.AddAutoMapper(typeof(Program));
 
-
+//Action Filters Konfigrasyonu Extentions Klasörüne tanýmlandý.
+builder.Services.ConfigureActionFilters();
 
 var app = builder.Build();
 
