@@ -9,6 +9,6 @@ namespace bsStoreApp.Repositories.Contracts
     public interface IRepositoryManager 
     {
         IBookRepository Book { get; }
-        void Save();
+        Task SaveAsync();
     }
 }

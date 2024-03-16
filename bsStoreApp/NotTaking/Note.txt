@@ -75,6 +75,10 @@ tanımlama yapıldı.
 });
 konfigrasyon budur.
 
+Asenkron Kod
+42.IBookRepository Async metodlarını çevirdik. Gerekli impelemente alınan yerleride async metodlarına çevirmiş olduk.
+43.IBookService async şeklinde crud işlemleri düzenlendi oraı düzenlendiği içinde BookManager impelemente edilen metodlarda async olarak düzeltildi.
+
 
 
 

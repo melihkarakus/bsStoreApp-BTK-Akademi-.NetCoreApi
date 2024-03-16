@@ -23,15 +23,15 @@ namespace bsStoreApp.Presentation.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAllBooks()
+        public async Task<IActionResult> GetAllBooksAsync()
         {
-            var Getbooks = _services.BookService.GetAllBooks(false);
+            var Getbooks = await _services.BookService.GetAllBooksAsync(false);
             return Ok(Getbooks);
         }
         [HttpGet("GetOneBook")]
-        public IActionResult GetOneBook(int id)
+        public async Task<IActionResult> GetOneBookAsync(int id)
         {
-            var Getonebooks = _services.BookService.GetOneBook(id, false);
+            var Getonebooks = await _services.BookService.GetOneBookAsync(id, false);
             if (Getonebooks is null)
             {
                 throw new BookNotFound(id);
@@ -42,7 +42,7 @@ namespace bsStoreApp.Presentation.Controllers
             }
         }
         [HttpPost]
-        public IActionResult AddBook(BookDtoForInsertion bookDtoForInsertion)
+        public async Task<IActionResult> AddBookAsync(BookDtoForInsertion bookDtoForInsertion)
         {
             //Hatayı gösterebilmek için modelstate isvalid yapılmalı.
             if (!ModelState.IsValid)
@@ -51,26 +51,27 @@ namespace bsStoreApp.Presentation.Controllers
             }
             else
             {
-                _services.BookService.CreateOneBook(bookDtoForInsertion);
+                await _services.BookService.CreateOneBookAsync(bookDtoForInsertion);
                 return Ok("Kitap Eklendi.");
             }
         }
         [HttpDelete("DeleteBook")]
-        public IActionResult DeleteBook(int id)
+        public async Task<IActionResult> DeleteBookAsync(int id)
         {
-            _services.BookService.DeleteOneBook(id, false);
+            await _services.BookService.DeleteOneBookAsync(id, false);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateBook(int id, BookDtoUpdate bookDtoUpdate)
+        public async Task<IActionResult> UpdateBookAsync(int id, BookDtoUpdate bookDtoUpdate)
         {
-            if (bookDtoUpdate == null)
+            
+            if (!ModelState.IsValid)
             {
-                return NotFound();
+                return UnprocessableEntity(ModelState);
             }
             else
             {
-                _services.BookService.UpdateOneBook(id, bookDtoUpdate, false);
+                await _services.BookService.UpdateOneBookAsync(id, bookDtoUpdate, false);
                 return Ok(bookDtoUpdate);
             }
         }

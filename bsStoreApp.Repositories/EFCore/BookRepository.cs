@@ -1,5 +1,6 @@
 ﻿using bsStoreApp.Entity.Models;
 using bsStoreApp.Repositories.Contracts;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,13 +20,14 @@ namespace bsStoreApp.Repositories.EFCore
 
         public void DeleteOneBook(Book book) => Delete(book);
 
-        public IQueryable<Book> GetAllBook(bool trackChanges) =>
-            FindAll(trackChanges)
-            .OrderBy(b => b.ID);
+        public async Task<IEnumerable<Book>> GetAllBookAsync(bool trackChanges) =>
+            await FindAll(trackChanges)
+            .OrderBy(b => b.ID)
+            .ToListAsync();
 
-        public Book GetOneBookById(int id, bool trackChanges) =>
-            FindByCondition(b => b.ID.Equals(id), trackChanges)
-            .FirstOrDefault();
+        public async Task<Book> GetOneBookByIdAsync(int id, bool trackChanges) =>
+            await FindByCondition(b => b.ID.Equals(id), trackChanges)
+            .FirstOrDefaultAsync();
 
         public void UpdateOneBook(Book book) => Update(book);
     }
