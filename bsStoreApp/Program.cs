@@ -47,6 +47,10 @@ builder.Services.AddAutoMapper(typeof(Program));
 //Action Filters Konfigrasyonu Extentions Klasörüne tanýmlandý.
 builder.Services.ConfigureActionFilters();
 
+//Page Konfigrasyon iþlemi
+builder.Services.ConfigureCors();
+
+
 var app = builder.Build();
 
 //ExceptionsMiddlewareExtensions sýnýfýna tanýmlanan configure burada bu þekilde geçmelisin çünkü mimari oluþtuktan sonra bu kod çalýþacaktýr.
@@ -67,6 +71,8 @@ if (app.Environment.IsProduction())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("corsPolicy");//Policy Page Konfigrasyonun içinde orasýda Api->Extensions
 
 app.UseAuthorization();
 

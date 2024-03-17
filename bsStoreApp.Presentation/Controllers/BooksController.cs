@@ -1,6 +1,7 @@
 ﻿using bsStoreApp.Entity.DataTransferObjects;
 using bsStoreApp.Entity.Exceptions;
 using bsStoreApp.Entity.Models;
+using bsStoreApp.Entity.RequestFeatures;
 using bsStoreApp.Presentation.ActionFilters;
 using bsStoreApp.Services.Contract;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace bsStoreApp.Presentation.Controllers
@@ -26,10 +28,13 @@ namespace bsStoreApp.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAllBooksAsync()
+        public async Task<IActionResult> GetAllBooksAsync([FromQuery]BookParameters bookParameters)
         {
-            var Getbooks = await _services.BookService.GetAllBooksAsync(false);
-            return Ok(Getbooks);
+            var PagedResult = await _services.
+                BookService.GetAllBooksAsync(bookParameters, false);
+
+            Response.Headers.Add("X-Pagination", JsonSerializer.Serialize(PagedResult.metaData));
+            return Ok(PagedResult.booksDto);
         }
         [HttpGet("GetOneBook")]
         public async Task<IActionResult> GetOneBookAsync(int id)

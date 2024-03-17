@@ -84,7 +84,18 @@ ActionFilter
 45.Program.cs Actionfilters controllerda attribute tanımlayabilmemiz için gerekli başlangıç konfigrasyonu eklendi ve BookControllerda çağırıldı.
 46.LogDetails sınıfı oluşturuldu. LogfilterAttribute sınıfı oluşturuldu. ve Program.cs de tanımlanması için ServiceExtentions bir konfigrasyon geçildi.
 
+Pagination
+47.Sayfalama işlemi için gerekli bir entity katmanında bir class ekleyip o sınıfın içine gerekli parametreleri girmek için kodlarımızı yazdık.
+48.IBookRepository BookParameters tanımladık ve BookRepository de bunun işlemlerini geçtik.
+49.IBookService sınıfında BookParameters geçtik buraya geçtiğimiz için BookManager eklenmesi gerekiyor çünkü implemente alındı. Tanımladık. Controllerda
+[FromQuery] bu eklenmezse çalışmaz
+MetaData
+50.MetaData sınıfı eklendi RequestFeatures altına propler tanımlandı. PagedList sınıfı tanımlandı ve içine paged yapmak için gerekli kodlamalar geldi.
+51.IBookRepository IEnumarable yerine IPagedList artık tanımlanması gerekiyor. BookRepository bu impelemente geçiyoruz ve bir kaç parametre ayarlanması gerekiyor
+52.IBookService değişiklik yapıldı ve BookManager tanımlandı.
+53.BooksControllerda artık swagger çağırılması için gerekli kodlama yapıldı. Konfigrasyon yapıldı. Program.cs tanımlandı.
 
+Filtreleme
 
 
 

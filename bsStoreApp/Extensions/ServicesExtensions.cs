@@ -36,5 +36,18 @@ namespace bsStoreApp.Extensions
             ServicesActionFilters.AddScoped<ValidationFilterAttribute>(); //IoC Kaydı
             ServicesActionFilters.AddSingleton<LogFilterAttribute>(); //Log kaydı
         }
+
+        public static void ConfigureCors(this IServiceCollection ServicesCors) 
+        {
+            ServicesCors.AddCors(options =>
+            {
+                options.AddPolicy("corsPolicy", builder =>
+                builder.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders("X-Pagination")
+                );
+            });
+        }
     }
 }

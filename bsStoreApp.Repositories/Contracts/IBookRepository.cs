@@ -1,4 +1,5 @@
 ﻿using bsStoreApp.Entity.Models;
+using bsStoreApp.Entity.RequestFeatures;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace bsStoreApp.Repositories.Contracts
 {
     public interface IBookRepository : IRepositoryBase<Book>
     {
-        Task<IEnumerable<Book>> GetAllBookAsync(bool trackChanges);
+        Task<PagedList<Book>> GetAllBookAsync(BookParameters bookParameters, bool trackChanges);
         Task<Book> GetOneBookByIdAsync(int id, bool trackChanges);
         void CreateOneBook(Book book);
         void UpdateOneBook(Book book);
