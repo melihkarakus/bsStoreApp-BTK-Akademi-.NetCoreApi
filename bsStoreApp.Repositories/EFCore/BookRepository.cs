@@ -1,6 +1,7 @@
 ﻿using bsStoreApp.Entity.Models;
 using bsStoreApp.Entity.RequestFeatures;
 using bsStoreApp.Repositories.Contracts;
+using bsStoreApp.Repositories.Extensions;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,8 @@ namespace bsStoreApp.Repositories.EFCore
         public async Task<PagedList<Book>> GetAllBookAsync(BookParameters bookParameters, bool trackChanges)
         {
             var books = await FindAll(trackChanges)
-                .FilterBooks(bookParameters.MinPrice, bookParameters.MaxPrice)
+                .FilterBooks(bookParameters.MinPrice, bookParameters.MaxPrice)//FilterBooks Extensions yazıldığı için bu şekilde tanımlandı.
+                .Search(bookParameters.SearchTerm)//Search Extensions yazıldığı için bu şekilde tanımlandı.
             .OrderBy(b => b.ID)
             .ToListAsync();
 

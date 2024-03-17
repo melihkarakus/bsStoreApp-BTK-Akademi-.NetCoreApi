@@ -105,7 +105,11 @@ Filtreleme
 kısa hale getirmiş olduk.
 
 Arama
+59.BookParameters içine gelip SearchTerm diye bir prop tanımlandı.
+60.BookRepositoryExtensions içine de bir configrasyon tanımlandı search diye 
+61.BookRepository de ise tanımlanan konfigrasyon geçildi.
 
+Sıralama
 
 
 
