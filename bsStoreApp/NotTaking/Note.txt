@@ -96,7 +96,15 @@ MetaData
 53.BooksControllerda artık swagger çağırılması için gerekli kodlama yapıldı. Konfigrasyon yapıldı. Program.cs tanımlandı.
 
 Filtreleme
+54.BookParameters sınıfında tanımladığımız 3 adet proplar vardır.
+55.BadRequestExceptions klasörü tanımlandı abstract olarak ve PriceOutOfRangeRequest sınıfına manuel uyarı sözcüğü eklendi.
+56.BookManager if (!bookParameters.ValidPriceRange)
+                throw new PriceOutOfRangeBadRequestException(); bunlar tanımlandı.
+57.BookRepository gelindi ve FindByCondition(b => (b.Price >= bookParameters.MinPrice) && (b.Price <= bookParameters.MaxPrice), trackChanges) bu ifade tanımlandı.
+58.BookRepositoryExtensions sınıfı tanımlandı ve min ve max price tanımlamaları gerçekleşti. BookRepository de olan tanımlanan o 57. satırdaki kodu daha 
+kısa hale getirmiş olduk.
 
+Arama
 
 
 
