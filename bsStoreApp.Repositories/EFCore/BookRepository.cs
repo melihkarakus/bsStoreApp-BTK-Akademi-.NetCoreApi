@@ -27,7 +27,7 @@ namespace bsStoreApp.Repositories.EFCore
             var books = await FindAll(trackChanges)
                 .FilterBooks(bookParameters.MinPrice, bookParameters.MaxPrice)//FilterBooks Extensions yazıldığı için bu şekilde tanımlandı.
                 .Search(bookParameters.SearchTerm)//Search Extensions yazıldığı için bu şekilde tanımlandı.
-            .OrderBy(b => b.ID)
+            .Sort(bookParameters.OrderBy)// Orderby Extensions yazıldığı için bu şekilde tanımlandı. Repository => extensions
             .ToListAsync();
 
             return PagedList<Book>

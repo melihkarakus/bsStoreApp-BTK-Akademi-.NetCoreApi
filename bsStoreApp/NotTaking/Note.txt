@@ -110,7 +110,14 @@ Arama
 61.BookRepository de ise tanımlanan konfigrasyon geçildi.
 
 Sıralama
+62.RequestParameters prop olarak orderby tanımlandı.
+63.BookParameters ctor olarak tanımlandı orderby geçildi.
+64.BookRepositoryExtensions sıralama için bir konfigrasyon yazıldı.
+65.BookRepository kısmına da order by bölümüne geçildi.
+66.Extensions tanımlaması yapıldı. Repository katmanında Extensions klasöründe OrderByQueryBuilder de inşa edildi ve orderbuquerybuilder BookRepositoryExtensions
+ise bu builder entegre edildi.
 
+Veri Şekillendirme
 
 
 
