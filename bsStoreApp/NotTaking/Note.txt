@@ -118,8 +118,16 @@ Sıralama
 ise bu builder entegre edildi.
 
 Veri Şekillendirme
+67.RequestParameters sınıfına gerekli prop eklendi.
+68.Liste üzerinde çalışan IEnumerebly olan, tek çalışan ise direk tanımlanan koddur. Bu ise IDataShaper sınıfında tanımlandı.
+69.DataShaper sınıfı oluşturuldu ve içine gerekli kodlamalar yazıldı.
+70.ServiceExtension sınıfına gidip gerekli extensions configrasyonu yazıldı.
+71.Program.cs de tanımlanan extensions geçildi.
+72.IBookService Gerekli ExpendoObject geçildi.
+73.BookManager sayfasında shaperdata eklendi.
+74.ServiceManager sayfasında DataShaper çağırıldı.
 
-
+Hateoas
 
 
 

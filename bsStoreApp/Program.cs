@@ -50,6 +50,8 @@ builder.Services.ConfigureActionFilters();
 //Page Konfigrasyon iþlemi
 builder.Services.ConfigureCors();
 
+//DataShaper Konfigrasyon iþlemi
+builder.Services.ConfigureDataShapper();
 
 var app = builder.Build();
 

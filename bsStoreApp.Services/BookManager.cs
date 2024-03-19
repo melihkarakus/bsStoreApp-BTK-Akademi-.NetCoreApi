@@ -7,6 +7,7 @@ using bsStoreApp.Repositories.Contracts;
 using bsStoreApp.Services.Contract;
 using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +19,13 @@ namespace bsStoreApp.Services
         private readonly IRepositoryManager _repositoryManager;
         private readonly ILoggerService _loggerService;
         private readonly IMapper _mapper;
-        public BookManager(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper)
+        private readonly IDataShaper<BookDto> _dataShaper;
+        public BookManager(IRepositoryManager repositoryManager, ILoggerService loggerService, IMapper mapper, IDataShaper<BookDto> dataShaper)
         {
             _repositoryManager = repositoryManager;
             _loggerService = loggerService;
             _mapper = mapper;
+            _dataShaper = dataShaper;
         }
 
         public async Task<BookDto> CreateOneBookAsync(BookDtoForInsertion bookDtoForInsertion)
@@ -47,13 +50,14 @@ namespace bsStoreApp.Services
             }
         }
 
-        public async Task<(IEnumerable<BookDto> booksDto, MetaData metaData)> GetAllBooksAsync(BookParameters bookParameters, bool trackChanges)
+        public async Task<(IEnumerable<ExpandoObject> booksDto, MetaData metaData)> GetAllBooksAsync(BookParameters bookParameters, bool trackChanges)
         {
             if (!bookParameters.ValidPriceRange)
                 throw new PriceOutOfRangeBadRequestException();
             var bookWithMetaData = await _repositoryManager.Book.GetAllBookAsync(bookParameters, trackChanges);
             var booksDto = _mapper.Map<IEnumerable<BookDto>>(bookWithMetaData);
-            return (booksDto, bookWithMetaData.MetaData);
+            var shapedData = _dataShaper.ShapeData(booksDto, bookParameters.Fields); //ShaperData eklendi
+            return (booksDto : shapedData,metaData : bookWithMetaData.MetaData);
         }
 
         public async Task<BookDto> GetOneBookAsync(int id, bool trackChanges)

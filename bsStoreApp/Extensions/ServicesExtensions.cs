@@ -1,4 +1,5 @@
-﻿using bsStoreApp.Presentation.ActionFilters;
+﻿using bsStoreApp.Entity.DataTransferObjects;
+using bsStoreApp.Presentation.ActionFilters;
 using bsStoreApp.Repositories.Contracts;
 using bsStoreApp.Repositories.EFCore;
 using bsStoreApp.Services;
@@ -48,6 +49,11 @@ namespace bsStoreApp.Extensions
                 .WithExposedHeaders("X-Pagination")
                 );
             });
+        }
+
+        public static void ConfigureDataShapper(this IServiceCollection ServiceDataShaper)
+        {
+            ServiceDataShaper.AddScoped<IDataShaper<BookDto>, DataShaper<BookDto>>();
         }
     }
 }
